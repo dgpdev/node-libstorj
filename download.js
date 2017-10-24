@@ -44,7 +44,7 @@ if (!filename) {
 const url = baseUrl + '/' + filename;
 const target = path.resolve(basedir, './' + filename);
 const download = `curl --location --fail --connect-timeout 120 --retry 3 -o "${target}" "${url}"`
-const extract = `tar --verbose -xf ${target}`;
+const extract = `unzip -o -j ${target}`;
 const hasher = `${sha256sum} ${target} | awk '{print $1}'`
 
 if (fs.existsSync(target)) {
