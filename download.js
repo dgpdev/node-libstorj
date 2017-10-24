@@ -36,10 +36,7 @@ for (var i = 0; i < releases.length; i++) {
   }
 }
 
-if (!filename) {
-  stderr.write(`Unable to download libstorj for platform: ${platform} and arch: ${arch}\n`);
-  process.exit(1);
-}
+
 
 const url = baseUrl + '/' + filename;
 const target = path.resolve(basedir, './' + filename);
