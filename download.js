@@ -53,12 +53,7 @@ if (fs.existsSync(target)) {
 
 const hashbuf = execSync(hasher);
 const hash = hashbuf.toString().trim();
-if (hash === checksum) {
-  stdout.write(`Verified libstorj: \n  file: ${target}\n  hash: ${checksum}\n`);
-} else {
-  stderr.write(`Unable to verify libstorj release: ${target} \n  expect: ${checksum}\n  actual: ${hash}\n`);
-  process.exit(1);
-}
+
 
 stdout.write(`Extracting target: ${target}\n`);
 execSync(extract);
