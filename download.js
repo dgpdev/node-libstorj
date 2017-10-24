@@ -31,7 +31,7 @@ let sha256sum = (platform === 'darwin') ? 'shasum -a 256' : 'sha256sum';
 
 for (var i = 0; i < releases.length; i++) {
   if (releases[i].arch === arch && releases[i].platform === platform) {
-    filename = '\' . releases[i].filename;
+    filename = releases[i] + '\' + .filename;
     checksum = releases[i].checksum;
   }
 }
